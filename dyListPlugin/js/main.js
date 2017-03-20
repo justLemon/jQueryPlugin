@@ -15,8 +15,8 @@
 		    span1 = $("<div class='dylist_menu'><span class='dylist_btn_edit'>编辑目录</span></div>").appendTo(this).click(function(){
 				$(this).hide();
 				ul.addClass('on-edit');
-				ul.find("a").click(function(event){
-					event.preventDefault();
+				ul.find("a").on("click",function(){
+		            event.preventDefault();
 				});
 				menuEdit.show();
 			});
@@ -111,6 +111,8 @@
 				configs.oneditfinished(configs.values);
 				span1.show();
 				menuEdit.hide();
+				ul.find("a").off("click");
+				ul.removeClass('on-edit');
 			});
 
 			for(i = 0; i < configs.values.length; i++){
