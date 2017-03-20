@@ -32,7 +32,7 @@
 						return;
 					}
 					configs.values.push(input.val());
-					ul.append(newList(input.val(), configs));
+					ul.append(newList(input.val(), configs.catagory));
 					inputbox.detach();
 					input.val('');
 					menuCheck.hide();
@@ -82,7 +82,7 @@
 					ul.find("input[type='text']").each(function(){
 						var newVal= $(this).val();
 						var oldVal = $(this).parent().attr("data-za-title");
-						$(this).parent().replaceWith(newList(newVal));
+						$(this).parent().replaceWith(newList(newVal, configs.catagory));
 						updateArray(configs.values, oldVal, newVal);
 					});
 					ul.find('span.modify').each(function(){
@@ -95,7 +95,7 @@
 					ul.find("input[type='text']").each(function(){
 						var newVal= $(this).val();
 						var oldVal = $(this).parent().attr("data-za-title");
-						$(this).parent().replaceWith(newList(oldVal));
+						$(this).parent().replaceWith(newList(oldVal, configs.catagory));
 					});
 					ul.find('span.modify').each(function(){
 						$(this).hide();
@@ -114,20 +114,21 @@
 			});
 
 			for(i = 0; i < configs.values.length; i++){
-				ul.append(newList(configs.values[i], configs));
+				ul.append(newList(configs.values[i], configs.catagory));
 			}
 		}
 	});
 
 	var defaults = {
 		'values' : [],
+		'catagory' : '/',
 		'oneditfinished' : function(vals){
 			console.log('dylist default callback');
 		}
 	};
 
-	function newList(lvalue){
-		var dyli_a = $("<a href='/' class='dylist_inside_a'>" + lvalue + "</a>");
+	function newList(lvalue, catagory){
+		var dyli_a = $("<a href='" + catagory + "/" + lvalue + "' class='dylist_inside_a'>" + lvalue + "</a>");
 		var  dyli_input = $("<input type='checkbox' class='dylist_inside_input'/>").hide();
 		var dyli_span = $("<span class='modify dylist_inside_modify'>修改</span>").hide().click(function(){
 			var val = $(this).siblings('a').text();
@@ -167,6 +168,8 @@ $(document).ready(function(){
 	$('.box').addDyList({
         //初始化列表的数组
         'values' : ['HTML','CSS','JavaScript'],
+        //列表中a标签的路由前缀
+        'catagory' : '/catagory',
         //动态列表编辑完成之后的回掉函数，用于更新数据库
         'oneditfinished' : function(vals){
             //用动态列表中的数组vals去更新数据库的操作
