@@ -1,0 +1,99 @@
+.dylist_ul{
+  color: #888;
+}
+.dylist_li{
+  line-height: 30px;
+}
+.dylist_menu{
+  color: #888;
+  font-size: 15px;
+  margin: 5px 0 5px 5px;
+}
+.dylist_btn_confirm{
+  cursor: pointer;
+  padding:  : 0 6px;
+}
+
+.dylist_btn_cancel{
+  cursor: pointer;
+  padding-left: 10px;
+}
+.dylist_btn_cancel:hover{
+  color: #444;
+}
+.dylist_btn_edit{
+  cursor: pointer;
+  padding-left: 10px;
+}
+.dylist_btn_edit:hover{
+  color: #444;
+}
+.dylist_btn_addDir{
+    cursor: pointer;
+    padding-left: 10px;
+}
+.dylist_btn_addDir:hover{
+  color: #444;
+}
+.dylist_btn_removeDir{
+  cursor: pointer;
+  padding-left: 10px;
+}
+.dylist_btn_removeDir:hover{
+  color: #444;
+}
+.dylist_btn_changeDir{
+  cursor: pointer;
+  padding-left: 10px;
+}
+.dylist_btn_changeDir:hover{
+  color: #444;
+}
+.dylist_btn_return{
+  cursor: pointer;
+  padding-left: 10px;
+}
+.dylist_btn_return:hover{
+  color: #444;
+}
+.dylist_inside_a{
+  text-decoration: none;
+  color: #888;
+  font-size: 16px;
+}
+.dylist_inside_a:hover{
+  text-decoration: underline;
+}
+.dylist_inside_input[type='checkbox']{
+  margin-left: 8px;
+}
+.dylist_inside_input[type='text']{
+  line-height: 20px;
+  margin: 5px 0;
+}
+.dylist_inside_modify{
+  cursor: pointer;
+  padding-left: 10px;
+}
+.dylist_inside_modify:hover{
+  color: #444;
+}
+.on-edit a:hover{
+  cursor: default;
+  text-decoration: none;
+}
+
+/*not dylist class*/
+.box{
+  width: 300px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: rgba(0,0,0,0.1);
+}
+p{
+  color: #777;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
